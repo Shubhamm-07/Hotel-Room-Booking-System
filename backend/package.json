@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "NODE_ENV=development nodemon server.js",
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
     "prod": "NODE_ENV=production node server.js",
     "lint": "eslint .",
     "test": "jest --forceExit",
@@ -45,6 +45,7 @@
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
     "babel-jest": "^29.3.1",
+    "cross-env": "^10.1.0",
     "eslint": "^8.28.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
