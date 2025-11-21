@@ -9,20 +9,24 @@
 
 const { successResponse, errorResponse } = require('../configs/app.response');
 
+// 
+
+
 function defaultController(_req, res) {
   try {
-    res.status(200).json(successResponse(
-      0,
-      'SUCCESS',
-      'Welcome to Hotel Room Booking System ~ Backed'
-    ));
+    res.status(200).json({
+      success: true,
+      message: 'Hotel Room Booking System API',
+      status: 'running'
+    });
   } catch (error) {
-    res.status(500).json(errorResponse(
-      2,
-      'SERVER SIDE ERROR',
-      error
-    ));
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
   }
 }
+
+module.exports = defaultController;
 
 module.exports = defaultController;

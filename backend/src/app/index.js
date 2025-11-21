@@ -36,8 +36,11 @@ env.config();
 // initialize express app
 const app = express();
 
+// response default (welcome) route
+app.get('/', defaultController);
+ 
 // limiting middleware to all requests
-app.use(limiter);
+//app.use(limiter);
 
 // application database connection establishment
 const connectDatabase = require('../database/connect.mongo.db');
@@ -76,8 +79,8 @@ app.use(express.json());
 // parse requests of content-type ~ application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// response default (welcome) route
-app.get('/', defaultController);
+// // response default (welcome) route
+// app.get('/', defaultController);
 
 // sets application API's routes
 app.use('/api/v1', authRoute); // auth routes
